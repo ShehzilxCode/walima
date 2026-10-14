@@ -34,7 +34,7 @@ body{
 body.locked{overflow:hidden}
 .allura{font-family:'Allura',cursive;font-weight:400}
 .ital{font-family:'Italiana',serif}
-#sparkle{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:60}
+#sparkle{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;opacity:.58}
 
 /* floating pastel orbs */
 .orbs i{position:fixed;border-radius:50%;filter:blur(50px);opacity:.55;z-index:0;animation:drift 18s ease-in-out infinite}
@@ -45,8 +45,8 @@ body.locked{overflow:hidden}
 @keyframes drift{50%{transform:translate(50px,-60px) scale(1.15)}}
 
 /* gradient text helpers */
-.gold{background:var(--goldgrad);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite}
-.silver{background:var(--silvergrad);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite reverse}
+.gold{background:none;color:#80601a;animation:none;text-shadow:0 1px 0 #fff,0 3px 14px rgba(128,96,26,.18)}
+.silver{background:none;color:#535d69;animation:none;text-shadow:0 1px 0 #fff,0 3px 14px rgba(83,93,105,.16)}
 @keyframes shine{to{background-position:200% 0}}
 
 /* ---------- SHARED ENVELOPE INTRO ---------- */
@@ -93,7 +93,7 @@ section{position:relative;max-width:980px;margin:0 auto;padding:90px 22px;text-a
 .reveal{opacity:0;transform:translateY(36px);filter:blur(6px);transition:all 1.1s var(--ease);transition-delay:var(--d,0s)}
 .reveal.in{opacity:1;transform:none;filter:none}
 .title{margin-bottom:38px}
-.title .allura{font-size:clamp(2.6rem,9vw,3.8rem);background:var(--goldgrad);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite;padding:0 8px}
+.title .allura{font-family:'Cormorant Garamond',serif;font-size:clamp(2.25rem,8vw,3.35rem);font-weight:600;line-height:1.1;color:#745718;background:none;animation:none;padding:0 8px}
 
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center}
 .frame{position:relative;width:min(94vw,600px);padding:90px 30px 64px;background:rgba(255,255,255,.62);backdrop-filter:blur(14px);
@@ -114,18 +114,18 @@ section{position:relative;max-width:980px;margin:0 auto;padding:90px 22px;text-a
 @keyframes flicker{50%{fill:#fff;filter:drop-shadow(0 0 5px #ffe9a8)}}
 
 .arabic{font-family:'Amiri',serif;font-size:1.55rem;color:var(--gold-deep);margin-bottom:14px}
-.eyebrow{font-family:'Italiana',serif;letter-spacing:.3em;text-transform:uppercase;font-size:.78rem;color:var(--silver-deep);margin:8px 0}
+.eyebrow{font-family:'Italiana',serif;font-weight:600;letter-spacing:.24em;text-transform:uppercase;font-size:.8rem;color:#555c67;margin:8px 0}
 .occasion{font-family:'Italiana',serif;font-weight:400;font-size:clamp(3.4rem,15vw,5.6rem);letter-spacing:.18em;text-transform:uppercase;
-  background:var(--goldgrad);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite;line-height:1.1;margin:4px 0 12px}
+  color:#765818;background:none;animation:none;text-shadow:0 1px #fff,0 4px 18px rgba(118,88,24,.18);line-height:1.1;margin:4px 0 12px}
 .names{display:flex;flex-direction:column;align-items:center;margin:8px 0 6px;line-height:1.1}
-.names .allura{font-size:clamp(2.8rem,11vw,4.3rem);padding:2px 12px}
+.names .allura{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:clamp(2.45rem,10vw,3.85rem);line-height:1.05;padding:4px 12px}
 .names .amp{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.6rem;color:var(--gold)}
 .rule{display:flex;align-items:center;justify-content:center;gap:12px;margin:18px 0}
 .rule i{width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
 .rule i:last-child{transform:scaleX(-1)}
 .rule b{width:9px;height:9px;background:var(--gold);transform:rotate(45deg);animation:turn 4s linear infinite}
 @keyframes turn{to{transform:rotate(405deg)}}
-.date{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600;letter-spacing:.06em}
+.date{font-family:'Cormorant Garamond',serif;font-size:1.48rem;font-weight:700;letter-spacing:.04em;color:#443b49}
 .scroll-cue{position:absolute;bottom:22px;left:50%;width:22px;height:36px;margin-left:-11px;border:1.5px solid var(--gold);border-radius:12px}
 .scroll-cue span{position:absolute;left:50%;top:7px;width:3px;height:7px;margin-left:-1.5px;border-radius:3px;background:var(--gold);animation:sc 1.6s infinite}
 @keyframes sc{70%{transform:translateY(12px);opacity:0}}
@@ -198,7 +198,7 @@ section{position:relative;max-width:980px;margin:0 auto;padding:90px 22px;text-a
 .big{font-size:clamp(2.6rem,10vw,4rem);color:var(--gold-deep)}
 .note{margin-top:8px;opacity:.8}
 footer{text-align:center;padding:30px 20px 90px;position:relative;z-index:2}
-footer .allura{font-size:2.8rem;color:var(--gold-deep)}
+footer .allura{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:2.45rem;color:#745718}
 
 @media (max-width:640px){
   section{padding:72px 18px}
