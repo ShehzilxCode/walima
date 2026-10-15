@@ -9,7 +9,7 @@ const INVITE = {
   dateText: "Monday, 16th November 2026",
   timeText: "7:00 PM onwards",
   venue: "Al-Zubair Banquet",
-  address: "SB-41-42, Sector 5-D, Surjani Town, Karachi. Cell: 0333-7633692. WhatsApp: 0317-2900207",
+  address: "SB-41-42, Sector 5-D, Surjani Town, Karachi.",
   mapLink: "https://maps.app.goo.gl/igiM2BtvaBqHCDPg9?g_st=aw",
   dress: "Dress code: pastel & gold tones",
   rsvpNote: "Kindly confirm your presence so we can host you well",
