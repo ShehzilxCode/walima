@@ -7,7 +7,7 @@ const INVITE = {
   hosts: "Abdul Shakeel\nand Family",
   dateISO: "2026-11-16T19:00:00",
   dateText: "Monday, 16th November 2026",
-  timeText: "7:00 PM onwards",
+  timeText: "8:00 PM onwards",
   venue: "Al-Zubair Banquet",
   address: "SB-41-42, Sector 5-D, Surjani Town, Karachi.",
   mapLink: "https://maps.app.goo.gl/igiM2BtvaBqHCDPg9?g_st=aw",
