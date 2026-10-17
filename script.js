@@ -11,14 +11,13 @@ const INVITE = {
   venue: "Al-Zubair Banquet",
   address: "SB-41-42, Sector 5-D, Surjani Town, Karachi.",
   mapLink: "https://maps.app.goo.gl/igiM2BtvaBqHCDPg9?g_st=aw",
-  dress: "Dress code: pastel & gold tones",
   rsvpNote: "Kindly confirm your presence so we can host you well",
   rsvpWhatsApp: "923000000000",
   schedule: [
-    { t: "7:00 PM", h: "Guest Arrival", p: "Welcome drinks and warm greetings." },
-    { t: "8:00 PM", h: "Couple's Entry", p: "The newlyweds join the celebration." },
-    { t: "8:45 PM", h: "Dinner", p: "A lavish spread to delight everyone." },
-    { t: "10:00 PM", h: "Dua & Farewell", p: "Prayers and photographs with the couple." }
+    { t: "8:00 PM", h: "Guest Arrival", p: "Welcome drinks and warm greetings." },
+    { t: "9:00 PM", h: "Couple's Entry", p: "The newlyweds join the celebration." },
+    { t: "10:00 PM", h: "Dinner", p: "A lavish spread to delight everyone." },
+    { t: "11:30 PM", h: "Dua & Farewell", p: "Prayers and photographs with the couple." }
   ]
 };
 
@@ -33,12 +32,18 @@ $("d-date").textContent = INVITE.dateText;
 $("d-time").textContent = INVITE.timeText;
 $("d-venue").textContent = INVITE.venue;
 $("d-address").textContent = INVITE.address;
-$("map-btn").href = INVITE.mapLink;
+// Map embed — build iframe src from venue+address, link goes to original mapLink
+(function(){
+  const wrap = document.getElementById("map-wrap");
+  const frame = document.getElementById("map-frame");
+  if (!wrap || !frame) return;
+  const q = encodeURIComponent(INVITE.venue + " " + INVITE.address);
+  frame.src = "https://maps.google.com/maps?q=" + q + "&output=embed&z=16";
+  wrap.href = INVITE.mapLink;
+})();
 $("hosts").textContent = INVITE.hosts;
-$("dress").textContent = INVITE.dress;
 $("rsvp-note").textContent = INVITE.rsvpNote;
 $("foot-names").textContent = `${INVITE.groom} & ${INVITE.bride}`;
-$("rsvp-btn").href = `https://wa.me/${INVITE.rsvpWhatsApp}?text=${encodeURIComponent("Assalamu Alaikum! I will be attending the Walima. ")}`;
 $("flow").innerHTML = INVITE.schedule
   .map(e => `<div class="step"><time>${e.t}</time><h5>${e.h}</h5><p>${e.p}</p></div>`).join("");
 
